@@ -5,7 +5,6 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint('${Theme.of(context).colorScheme}');
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,

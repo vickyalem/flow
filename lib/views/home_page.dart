@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<EntryViewModel>(builder: (context, viewModel, child) {
       viewModel.fetchEntries();
-      var entries = viewModel.entries;
+      var entries = viewModel.entries.reversed;
       if (entries.isEmpty) {
         return Center(
             child: Column(
@@ -55,9 +55,8 @@ class HomePage extends StatelessWidget {
                         context, viewModel, entry.id, details.globalPosition);
                   },
                   child: CustomCard(
-                    title: entry.title,
-                    body: entry.content,
-                    createdAt: entry.createdAt,
+                    entry: entry,
+                    viewModel: viewModel,
                   )),
           ],
         );

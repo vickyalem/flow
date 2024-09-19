@@ -1,6 +1,6 @@
 import 'package:flow/data/repository/entry_repo.dart';
 import 'package:flow/model/entry.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class EntryViewModel extends ChangeNotifier {
   final EntryRepo _repository;
@@ -22,6 +22,11 @@ class EntryViewModel extends ChangeNotifier {
 
   Future<void> deleteEntry(int id) async {
     await _repository.deleteEntry(id);
+    await fetchEntries(); 
+  }
+
+  Future<void> updateEntry(EntryModel entry) async {
+    await _repository.updateEntry(entry);
     await fetchEntries(); 
   }
 }

@@ -18,4 +18,8 @@ class EntryRepo {
   Future<void> deleteEntry(int id) async {
     await _appDatabase.deleteEntry(id);
   }
+
+  Future<void> updateEntry(EntryModel entry) async {
+    await _appDatabase.updateEntry(Entry(id: entry.id, title: entry.title, content: entry.content, createdAt: entry.createdAt));
+  }
 }

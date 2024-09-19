@@ -25,6 +25,7 @@ class AppDatabase extends _$AppDatabase {
       into(entries).insert(entry);
   Future<int> deleteEntry(int id) =>
       (delete(entries)..where((u) => u.id.equals(id))).go();
+  Future<bool> updateEntry(Entry entry) => update(entries).replace(entry);
 
   static QueryExecutor _openConnection() {
     // `driftDatabase` from `package:drift_flutter` stores the database in
