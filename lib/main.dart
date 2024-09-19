@@ -1,6 +1,6 @@
 import 'package:flow/data/database/database.dart';
 import 'package:flow/data/repository/entry_repo.dart';
-import 'package:flow/viewModel/entryViewModel.dart';
+import 'package:flow/viewModel/entry_view_model.dart';
 import 'package:flow/views/main_body.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

@@ -1,4 +1,4 @@
-import 'package:flow/viewModel/entryViewModel.dart';
+import 'package:flow/viewModel/entry_view_model.dart';
 import 'package:flow/views/editing_page.dart';
 import 'package:flow/widgets/customCard.dart';
 import 'package:flutter/material.dart';

@@ -1,4 +1,4 @@
-import 'package:flow/viewModel/entryViewModel.dart';
+import 'package:flow/viewModel/entry_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
