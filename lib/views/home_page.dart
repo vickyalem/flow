@@ -17,8 +17,12 @@ class HomePage extends StatelessWidget {
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text("There are currently no entries."),
-            FilledButton.tonal(
+            Text("There are currently no entries.",
+                style: Theme.of(context).textTheme.bodyLarge),
+            const SizedBox(
+              height: 10,
+            ),
+            OutlinedButton(
                 onPressed: () {
                   Navigator.push(
                       context,
@@ -34,6 +38,8 @@ class HomePage extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(12.0),
               child: SearchBar(
+                  backgroundColor: MaterialStateProperty.all(
+                      Theme.of(context).colorScheme.surface),
                   hintText: 'Search your Journal Entries',
                   leading: const Icon(Icons.search),
                   elevation: WidgetStateProperty.all<double?>(0.0)),
@@ -48,7 +54,11 @@ class HomePage extends StatelessWidget {
                     _showContextMenu(
                         context, viewModel, entry.id, details.globalPosition);
                   },
-                  child: CustomCard(title: entry.title, body: entry.content)),
+                  child: CustomCard(
+                    title: entry.title,
+                    body: entry.content,
+                    createdAt: entry.createdAt,
+                  )),
           ],
         );
       }

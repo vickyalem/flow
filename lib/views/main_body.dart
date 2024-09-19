@@ -31,7 +31,10 @@ class _MainBodyState extends State<MainBody> {
       case 0:
         return [
           IconButton(
-            icon: const Icon(Icons.more_vert),
+            icon: Icon(
+              Icons.more_vert,
+              color: Theme.of(context).colorScheme.secondary,
+            ),
             tooltip: 'Show Snackbar',
             onPressed: () {
               Navigator.push(
@@ -42,7 +45,10 @@ class _MainBodyState extends State<MainBody> {
             },
           ),
           IconButton(
-            icon: const Icon(Icons.add_circle),
+            icon: Icon(
+              Icons.add_circle,
+              color: Theme.of(context).colorScheme.primary,
+            ),
             tooltip: 'Go to the next page',
             onPressed: () {
               Navigator.push(
@@ -60,7 +66,9 @@ class _MainBodyState extends State<MainBody> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.surfaceDim,
       appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.surfaceDim,
         title: Text(_titles[currentPageIndex]),
         actions: _actions(context),
       ),
