@@ -16,6 +16,7 @@ class MainBody extends StatefulWidget {
 
 class _MainBodyState extends State<MainBody> {
   int currentPageIndex = 0;
+  
   final List<Widget> _body = <Widget>[
     const HomePage(),
     const SharingPage(),
@@ -44,6 +45,7 @@ class _MainBodyState extends State<MainBody> {
               );
             },
           ),
+          
           IconButton(
             icon: Icon(
               Icons.add_circle,
@@ -67,12 +69,15 @@ class _MainBodyState extends State<MainBody> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surfaceDim,
+
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.surfaceDim,
         title: Text(_titles[currentPageIndex]),
         actions: _actions(context),
       ),
+
       body: _body[currentPageIndex],
+
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (int index) =>
             setState(() => currentPageIndex = index),
@@ -93,6 +98,7 @@ class _MainBodyState extends State<MainBody> {
           ),
         ],
       ),
+
     );
   }
 }

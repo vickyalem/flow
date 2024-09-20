@@ -10,19 +10,25 @@ class EditingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final titleController = TextEditingController();
     final contentController = TextEditingController();
+
     return Consumer<EntryViewModel>(builder: (context, viewModel, child) {
       return Scaffold(
+        backgroundColor: Theme.of(context).colorScheme.surfaceDim,
+
         appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.surfaceDim,
           leading: IconButton(
             onPressed: () {
               Navigator.pop(context);
             },
             icon: const Icon(Icons.chevron_left),
           ),
+
           title: Text(
             DateFormat('EEEE, d MMM yyyy').format(DateTime.now()),
             style: const TextStyle(fontSize: 18),
           ),
+
           actions: [
             TextButton(
               onPressed: () {
@@ -58,6 +64,7 @@ class EditingPage extends StatelessWidget {
           ],
         ),
         // end of app bar
+        
         body: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(

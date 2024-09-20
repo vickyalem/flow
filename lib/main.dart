@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightBlue),
         ),
-        // home: const NavigationExample(),
+        // home: landing page,
         home: const MainBody(),
       ),
     );

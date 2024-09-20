@@ -12,6 +12,7 @@ class HomePage extends StatelessWidget {
     return Consumer<EntryViewModel>(builder: (context, viewModel, child) {
       viewModel.fetchEntries();
       var entries = viewModel.entries.reversed;
+
       if (entries.isEmpty) {
         return Center(
             child: Column(
@@ -63,8 +64,8 @@ class HomePage extends StatelessWidget {
       }
     });
   }
-
   // end of build method
+
   void _showContextMenu(
       BuildContext context, EntryViewModel viewModel, int id, Offset position) {
     showMenu(
